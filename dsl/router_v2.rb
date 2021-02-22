@@ -1,3 +1,6 @@
+# Refactored implementation
+require 'pp'
+
 class Router
   attr_reader :routes
 

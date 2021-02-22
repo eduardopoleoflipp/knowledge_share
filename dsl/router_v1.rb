@@ -1,3 +1,5 @@
+# Naive Implementation for a simple router
+
 # router = Router.new.config do
 #   get '/cats', to: 'cats#index'
 #   post '/cats', to: 'cats#create'
@@ -14,6 +16,8 @@
 #   [ 'PATCH',  '/cats', { action: 'update', controller: 'cats'} ],
 #   [ 'GET',  '/dogs', { action: 'index', controller: 'dogs'} ]
 # ]
+
+require 'pp'
 
 class Router
   attr_reader :routes
