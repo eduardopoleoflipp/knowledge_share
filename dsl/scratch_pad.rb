@@ -54,7 +54,7 @@ class Router
   end
 
   def singularized(name)
-    # maybe you want the rails version of this.
+    # super naive, just removing the last 's' letter
     name[0...-1]
   end
 end
