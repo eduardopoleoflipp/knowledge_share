@@ -76,6 +76,7 @@ def map(array)
   new_array = []
 
   for i in 0...array.length
+    puts "#{array[i]} inside the method"
     new_value = yield array[i]
     new_array << new_value 
   end
@@ -86,6 +87,7 @@ end
 a = [1,2,3]
 
 map(a) do |e|
+  puts "#{e} inside the block"
   2 * e
 end
 
@@ -96,11 +98,13 @@ end
 - Used as `block.call()`
 
 ```ruby
+
 def map2(array, &block)
   length = array.length
   new_array = []
 
   for i in 0...length
+    puts "#{array[i]} inside the method"
     new_value = block.call(array[i])
     new_array << new_value 
   end
@@ -111,8 +115,11 @@ end
 a = [1,2,3]
 
 map2(a) do |e|
+  puts "#{e} inside the block"
   2 * e
 end
+
+#=> [2,4,6]
 ```
 - There are more subtleties to this e.g `Procs`, `lamdas`, etc but they are outside the scope for this presentation.
 
@@ -131,11 +138,11 @@ number = 1
 
 a = [1,2,3]
 
-r = map2(a) do |e|
+map2(a) do |e|
  e + calculation + number
 end
 
-r #=> [3, 4, 5]
+#=> [3, 4, 5]
 ```
 
 ## DSL and context
